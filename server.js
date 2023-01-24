@@ -14,10 +14,10 @@ const app = express(); // Creates an Express application.
 client.set("number", 0);
 
 app.get('/', (req, res) => {
-    client("number", (err, number) => {
+    client.get("number", (err, number) => {
         // 현재 숫자를 가져온 후에 1씩 올려줍니다.
         client.set("number", parseInt(number) + 1);
-        res.send("숫자가 1씩 올라가비다. 숫자: " + number);
+        res.send("숫자가 1씩 올라갑니다. 숫자: " + number);
     })
 });
 
